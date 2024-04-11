@@ -154,9 +154,9 @@ ld1 {v2.2s}, [x0, 16] # Load two 32-bit values starting at [x0]+16
 There are also `ld2`, `ld3`, `ld4` operations that can be used for 2-, 3- and 4-tuple data (Multi-dimensional). This is why a curly brace is required for the operation. We do not need beyond `ld1` for this lab. For a 4-lane single-precision FP load, `.4s` is the appropriate prefix. Replace the `ldr` instructions with:
 
 ```arm
-# Load two 64-bit values starting at [x1], increment pointer
+# Load four 32-bit values starting at [x1], increment pointer
 ld1 {v0.4s}, [x1], 16
-# Load two 64-bit values starting at [x2], increment pointer
+# Load four 32-bit values starting at [x2], increment pointer
 ld1 {v1.4s}, [x2], 16
 ```
 
@@ -176,7 +176,7 @@ Curly braces are only required for loads and stores.
 The SIMD store operation is similar to the load operation:
 
 ```arm
-# Save two 64-bit values starting at [x3], increment pointer
+# Save four 32-bit values starting at [x3], increment pointer
 st1 {v0.4s}, [x3], 16
 ```
 
